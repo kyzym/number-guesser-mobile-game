@@ -38,7 +38,7 @@ export const StartGameScreen = ({ onPickNumber }) => {
     <View style={styles.rootContainer}>
       <Title>Guess My Number</Title>
       <Card>
-        <InstructionText>Enter a Number 1 to 99</InstructionText>
+        <InstructionText>Input: 1-99</InstructionText>
         <TextInput
           style={styles.numberInput}
           maxLength={2}
