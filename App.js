@@ -15,7 +15,7 @@ export default function App() {
   const [fontIsLoaded, setFontIsLoaded] = useState(false);
 
   useEffect(() => {
-    async function loadFonts() {
+    const loadFonts = async () => {
       try {
         await loadAsync({
           'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
@@ -25,7 +25,7 @@ export default function App() {
       } catch (error) {
         console.error(error);
       }
-    }
+    };
 
     loadFonts();
   }, []);
@@ -40,19 +40,19 @@ export default function App() {
     return null;
   }
 
-  function pickedNumberHandler(pickerNumber) {
+  const pickedNumberHandler = (pickerNumber) => {
     setUserNumber(pickerNumber);
     setGameIsOver(false);
-  }
+  };
 
-  function gameOverHandler(numberOfRounds) {
+  const gameOverHandler = (numberOfRounds) => {
     setGameIsOver(true);
     setGuessRounds(numberOfRounds);
-  }
+  };
 
-  function startNewGameHandler() {
+  const startNewGameHandler = () => {
     setUserNumber(null), setGuessRounds(0);
-  }
+  };
 
   let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
 

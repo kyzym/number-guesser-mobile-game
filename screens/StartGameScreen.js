@@ -6,15 +6,15 @@ import { Color } from '../utils/colors';
 export const StartGameScreen = ({ onPickNumber }) => {
   const [enteredNumber, setEnteredNumber] = useState('');
 
-  function numberInputHandler(enteredText) {
+  const numberInputHandler = (enteredText) => {
     setEnteredNumber(enteredText);
-  }
+  };
 
-  function resetInputHandler() {
+  const resetInputHandler = () => {
     setEnteredNumber('');
-  }
+  };
 
-  function confirmInputHandler() {
+  const confirmInputHandler = () => {
     const chosenNumber = parseInt(enteredNumber);
 
     if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
@@ -32,7 +32,7 @@ export const StartGameScreen = ({ onPickNumber }) => {
     }
 
     onPickNumber(chosenNumber);
-  }
+  };
 
   return (
     <View style={styles.rootContainer}>
