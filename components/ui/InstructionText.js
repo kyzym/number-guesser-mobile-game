@@ -6,5 +6,9 @@ export const InstructionText = ({ children, style }) => {
 };
 
 const styles = StyleSheet.create({
-  instructionText: { color: Color.secondary, fontSize: 24 },
+  instructionText: {
+    color: Color.secondary,
+    fontSize: 24,
+    fontFamily: 'open-sans',
+  },
 });

@@ -7,6 +7,9 @@ import {
   PrimaryButton,
 } from '../components';
 import { Title } from '../components/';
+
+import { Ionicons } from '@expo/vector-icons';
+
 const generateRandomBetween = (min, max, exclude) => {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
 
@@ -70,13 +73,13 @@ export const GameScreen = ({ userNumber, onGameOver }) => {
         <View style={styles.buttonsContainer}>
           <View style={styles.button}>
             <PrimaryButton onPress={() => nextGuessHandler('lower')}>
-              -
+              <Ionicons name="md-remove" size={24} color="white" />
             </PrimaryButton>
           </View>
 
           <View style={styles.button}>
             <PrimaryButton onPress={() => nextGuessHandler('greater')}>
-              +
+              <Ionicons name="md-add" size={24} color="white" />
             </PrimaryButton>
           </View>
         </View>
